@@ -803,7 +803,7 @@ footer{
   }
   
 .nav-menu-btn{
-  background: url(/images/menu-btn.png) no-repeat;
+  background: url(images/menu-btn.png) no-repeat;
   filter: var(--color-filters);
   background-size: 30px;
   background-position: center;
@@ -919,7 +919,7 @@ footer{
     }
 
     /* Home 730px */
-    
+
 
 }
 
