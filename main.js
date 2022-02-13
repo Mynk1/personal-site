@@ -47,3 +47,11 @@ navItems.forEach((navItem) =>  {
         navigation.classList.remove("active");
     });
 });
+
+
+// Alert 
+const alrt = document.querySelector('.alrt');
+
+alrt.addEventListener('click', function(){
+    alert(`Database connectivity is In-progress!`);
+});
