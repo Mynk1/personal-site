@@ -49,9 +49,86 @@ navItems.forEach((navItem) =>  {
 });
 
 
-// Alert 
-const alrt = document.querySelector('.alrt');
+// Firebase setup
 
-alrt.addEventListener('click', function(){
-    alert(`Database connectivity is In-progress!`);
-});
+const firebaseConfig = {
+
+    apiKey: "AIzaSyDag8R73-OuvBCY1rAS3EmFiYqk2UAoB3w",
+  
+    authDomain: "personalsite-63e10.firebaseapp.com",
+  
+    databaseURL: "https://personalsite-63e10-default-rtdb.firebaseio.com",
+  
+    projectId: "personalsite-63e10",
+  
+    storageBucket: "personalsite-63e10.appspot.com",
+  
+    messagingSenderId: "945056723012",
+  
+    appId: "1:945056723012:web:7fb32ba85eef760cdbcc11",
+  
+    measurementId: "G-HZ54CTHW7B"
+  
+  };
+  
+  // Initialize firebase
+  firebase.initializeApp(firebaseConfig);
+
+  // Reference collection (Database creation)
+  var messagesRef = firebase.database().ref('ContactDataBase');
+
+  // Listen for form submit
+  document.getElementById('contactForm').addEventListener('submit', submitFormFunction);
+
+  //Function
+  function submitFormFunction(e){
+    e.preventDefault();
+ 
+
+  //get values
+  var nameValue = getInputVal('nameId');
+  var emailValue = getInputVal('emailId');
+  var messageValue = getInputVal('messageId');
+
+  //save message
+  saveMessage(nameValue, emailValue, messageValue);
+
+  // Clear form data after submission
+  document.getElementById('contactForm').reset();
+
+  //   alert("Form is submitted!");
+
+  setTimeout(() => {
+    nameValue.value = '',
+    emailValue.value = '',
+    messageValue.value = ''
+  }, 2000);
+  
+  success.style.display = 'block';
+
+}
+
+  // Function to get get form values
+    function getInputVal(id){
+    return document.getElementById(id).value;
+  }
+
+  // Save message to firebase
+function saveMessage(nameValue, emailValue, messageValue){
+    var newMessageRef = messagesRef.push();
+    
+    newMessageRef.set({
+      name: nameValue,
+      email:emailValue,
+      message:messageValue
+    });
+  }
+  
+
+
+// // Alert 
+// const alrt = document.querySelector('.alrt');
+
+// alrt.addEventListener('click', function(){
+//     alert(`Database connectivity is In-progress!`);
+// });
