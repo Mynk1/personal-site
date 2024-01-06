@@ -967,3 +967,35 @@ footer{
 }
 
 }
+
+/* Contact form success text */
+.s-message{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 45px;
+    margin-top: -15px;
+    position: relative;
+}
+
+.success{
+    color: rgb(11, 156, 11);
+    position: absolute;
+    animation: buttons .3s linear;
+    display: none;
+    background-color: whitesmoke;
+    padding: 0 5px 0 5px;
+}
+
+
+@keyframes buttons {
+    0%{
+        transform: scale(0);
+    }
+    50%{
+        transform: scale(.5);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
