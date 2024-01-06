@@ -352,20 +352,27 @@
 
                     <div class="contact-right">
                         <p>I am always open to discussing product<br> <span>Web development or partnerships.</span></p>
-                        <form action="" class="contact-form">
+                        <form id="contactForm" class="contact-form">
+                            
+                            <div class="s-message">
+                                <div class="success" id="success">Your submission has been received!</div>
+                                
+                            </div>
+
                             <div class="first-row">
-                            <input type="text" placeholder="Full Name">
+                            <input type="text" id="nameId" placeholder="Full Name" required>
                             </div>
 
                             <div class="second-row">
-                            <input type="email" placeholder="Email">
+                            <input type="email" id="emailId" placeholder="Email" required>
                             </div>
 
                             <div class="third-row">
-                            <textarea name="message" id="" rows="7" placeholder="Message"></textarea>
+                            <textarea name="message" id="messageId" rows="7" placeholder="Message" required></textarea>
                             </div>
 
-                            <button class="btn alrt" type="submit" onclick="alrt()">Send Message <i class="fas fa-paper-plane"></i></button>
+                            <button class="btn alrt" type="submit">Send Message <i class="fas fa-paper-plane"></i></button>
+
                         </form>
                     </div>
 
